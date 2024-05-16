@@ -1,0 +1,31 @@
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between; /* Space out items, placing them at opposite ends */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.auth-links {
+    display: flex;
+    margin-left: auto; /* Pushes the auth-links to the right */
+}
+
+.auth-links a {
+    color: #fff;
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+.auth-links a:last-child {
+    padding-right: 20px; /* Add padding to the right of the last link */
+}
+
+.auth-links a:hover {
+    color: #ccc; /* Change color on hover */
+}

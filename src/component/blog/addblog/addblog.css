@@ -1,0 +1,89 @@
+/* Modal container */
+.small-modal-add {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 60%; /* Set maximum width */
+    max-height: 90%; /* Set maximum height */
+    overflow: auto; /* Enable scrolling if content exceeds modal dimensions */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Modal header */
+  .small-modal-add h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Input fields */
+  .small-modal-add input[type="text"],
+  .small-modal-add textarea,
+  .small-modal-add select {
+    width: calc(100% - 24px); /* Adjust width for padding */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  /* Textarea for long description */
+  .small-modal-add textarea {
+    height: 150px;
+  }
+  
+  /* Dropdown select */
+  .small-modal-add select {
+    height: 50px;
+    appearance: none;
+    background-color: #f9f9f9;
+    cursor: pointer;
+  }
+  
+  /* File input */
+  .small-modal-add input[type="file"] {
+    margin-top: 20px;
+    margin-bottom:20px;
+  }
+  
+  /* Preview container */
+  .preview-container {
+    width: 100%;
+    max-width: 300px; /* Set maximum width for the preview container */
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  /* Preview image */
+  .preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  /* Submit button */
+  .small-modal-add button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+  }
+  
+  .small-modal-add button:hover {
+    background-color: #0056b3;
+  }
+  

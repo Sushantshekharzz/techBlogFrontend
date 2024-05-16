@@ -1,0 +1,42 @@
+/* invalidcredential.css */
+
+/* Modal container */
+.tologin-modal {
+  position: fixed;
+  top: 50%;
+  /* background-color: black; */
+  
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 30px;
+  width: 400px; /* Set width */
+  max-width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.tologin-modal h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Close button */
+.tologin-modal button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  margin-top: 30px;
+}
+
+.tologin-modal button:hover {
+  background-color: #0056b3;
+}
