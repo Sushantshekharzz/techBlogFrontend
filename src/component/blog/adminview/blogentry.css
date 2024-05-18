@@ -6,7 +6,8 @@
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
-  margin-bottom: 20px;
+  margin-bottom: 70px;
+  margin-top:70px
 }
 
 .blog-entry:hover {

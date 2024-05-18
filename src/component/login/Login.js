@@ -54,10 +54,10 @@ function Login() {
 
   return (
     <div className="login-container">
-      <h2 className='login'>Login</h2>
+      <h2 className='login'>LOGIN</h2>
       <form onSubmit={handleSubmit}>
         <div className="input-group">
-          <label htmlFor="username" >Username</label>
+          <label htmlFor="username" >USERNAME</label>
           <input
             type="text"
             id="username"
@@ -69,7 +69,7 @@ function Login() {
           />
         </div>
         <div className="input-group">
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">PASSWORD</label>
           <input
             type="password"
             id="password"
@@ -81,8 +81,8 @@ function Login() {
 
           />
         </div>
-        <button type="submit">Login</button>
-        <p>Not have an account? <Link  style={{ textDecoration: 'none', color: 'inherit' }} to="/SignUp">Sign Up</Link></p>
+        <button type="submit">LOGIN</button>
+        <p>Not have an account ? <Link  style={{ textDecoration: 'none', color: 'inherit' }} to="/SignUp">SIGN UP</Link></p>
         <InvalidCredential
           isOpen={modalIsOpen}
           // toLogin = {toLogin}

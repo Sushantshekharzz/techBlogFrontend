@@ -3,6 +3,7 @@ import Login from './component/login/Login';
 import SignUp from './component/signup/SignUp';
 import Home from './component/home/Home';
 import Addblog from './component/blog/Blog';
+import Contact from './component/contact/Contact';
 
 
 function App() {
@@ -14,6 +15,9 @@ function App() {
         <Route path="/Login" element={<Login />} />  
         <Route path="/SignUp" element={<SignUp />} /> 
         <Route path="/Addblog" element={<Addblog />} /> 
+        <Route path="/Contact" element={<Contact />} /> 
+
+
       </Routes>
     </Router>
     </div>

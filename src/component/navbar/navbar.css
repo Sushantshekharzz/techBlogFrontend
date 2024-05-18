@@ -1,9 +1,9 @@
 .navbar {
-    background-color: #333;
+    background-color: #141414;
     color: #fff;
     padding: 15px 20px;
     display: flex;
-    justify-content: space-between; /* Space out items, placing them at opposite ends */
+    justify-content: space-between;
 }
 
 .container {
@@ -11,9 +11,14 @@
     align-items: center;
 }
 
+.logo {
+    height: 40px; /* Adjust the height according to your needs */
+    margin-right: auto; /* Add some margin if needed */
+}
+
 .auth-links {
     display: flex;
-    margin-left: auto; /* Pushes the auth-links to the right */
+    margin-left: auto;
 }
 
 .auth-links a {
@@ -23,9 +28,9 @@
 }
 
 .auth-links a:last-child {
-    padding-right: 20px; /* Add padding to the right of the last link */
+    padding-right: 20px;
 }
 
 .auth-links a:hover {
-    color: #ccc; /* Change color on hover */
+    color: #ccc;
 }

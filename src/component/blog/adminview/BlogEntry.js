@@ -14,7 +14,7 @@ const BlogEntry = ({ blog, onEdit, onDelete, home }) => {
       </div>
       <div className="content-container">
         <div className="field">
-          <label>Category:</label>
+          <label>Destination</label>
           <div className="value">{category}</div>
         </div>
         <div className="field">

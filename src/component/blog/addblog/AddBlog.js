@@ -96,21 +96,24 @@ const AddBlog = ({ isOpen, onRequestClose , userName, onAddSuccess }) => {
                 contentLabel="Username Exists Modal"
                 className="small-modal-add" // Apply the CSS class to the modal
             >
-                <h2>Title</h2>
+                <h2>TITLE</h2>
                 <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-                <h2>Short Description</h2>
+                <h2>SHORT DESCRIPTION</h2>
                 <textarea value={shortDescription} className="shortdesc" onChange={(e) => setShortDescription(e.target.value)} />
-                <h2>Category</h2>
+                <h2>DESTINATION</h2>
                 <select className='dropDown' value={category} onChange={(e) => setCategory(e.target.value)}>
-                    <option value="">Select Category</option>
-                    <option value="Technology">Technology</option>
-                    <option value="Sports">Sports</option>
-                    <option value="Politics">Politics</option>
-                    <option value="Entertainment">Entertainment</option>
+                    <option value="">SELECT DESTINATION</option>
+                    <option value="AFRICA">AFRICA</option>
+                    <option value="ANTARTICA">ANTARTICA</option>
+                    <option value="ASIA">ASIA</option>
+                    <option value="AUSTRALIA">AUSTRALIA</option>
+                    <option value="EUROPE">EUROPE</option>
+                    <option value="NORTH AMERICA">NORTH AMERICA</option>
+                    <option value="SOUTH AMERICA">SOUTH AMERICA</option>
                 </select>
-                <h2>Long Description</h2>
+                <h2>LONG DESCRIPTION</h2>
                 <textarea className='longdesc' value={longDescription} onChange={(e) => setLongDescription(e.target.value)} />
-                <h2>Upload Image</h2>
+                <h2>UPLOAD IMAGE</h2>
                 {previewImage && 
                 
                 <div className="preview-container">
@@ -120,7 +123,7 @@ const AddBlog = ({ isOpen, onRequestClose , userName, onAddSuccess }) => {
                 }
 
                 <input type="file" onChange={handleImageChange} accept="image/*" />
-                <button onClick={handleSubmit}>Submit</button>
+                <button onClick={handleSubmit}>SUBMIT</button>
             </Modal>
         </>
     );

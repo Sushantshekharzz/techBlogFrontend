@@ -41,10 +41,10 @@ function SignUp() {
 
   return (
     <div className="login-container">
-      <h2 className='login'>Sign Up</h2>
+      <h2 className='login'>SIGN UP</h2>
       <form onSubmit={handleSubmit}>
         <div className="input-group">
-          <label htmlFor="username" >Username</label>
+          <label htmlFor="username" >USERNAME</label>
           <input
             type="text"
             id="username"
@@ -56,7 +56,7 @@ function SignUp() {
           />
         </div>
         <div className="input-group">
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">PASSWORD</label>
           <input
             type="password"
             id="password"
@@ -68,8 +68,8 @@ function SignUp() {
 
           />
         </div>
-        <button type="submit">Sign Up</button>
-        <p>Already have an account? <Link style={{ textDecoration: 'none', color: 'inherit' }} to="/Login">Log in</Link></p>
+        <button type="submit">SIGN UP</button>
+        <p>Already have an account? <Link style={{ textDecoration: 'none', color: 'inherit' }} to="/Login">LOGIN</Link></p>
 
         <UsernameExistsModal
           isOpen={modalIsOpen}
