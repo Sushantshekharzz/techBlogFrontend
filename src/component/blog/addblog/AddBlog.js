@@ -96,13 +96,13 @@ const AddBlog = ({ isOpen, onRequestClose , userName, onAddSuccess }) => {
                 contentLabel="Username Exists Modal"
                 className="small-modal-add" // Apply the CSS class to the modal
             >
-                <h2>TITLE</h2>
+                <h2>Title</h2>
                 <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-                <h2>SHORT DESCRIPTION</h2>
+                <h2>Short Description</h2>
                 <textarea value={shortDescription} className="shortdesc" onChange={(e) => setShortDescription(e.target.value)} />
-                <h2>DESTINATION</h2>
+                <h2>Destination</h2>
                 <select className='dropDown' value={category} onChange={(e) => setCategory(e.target.value)}>
-                    <option value="">SELECT DESTINATION</option>
+                    <option value="">Select Destination</option>
                     <option value="AFRICA">AFRICA</option>
                     <option value="ANTARTICA">ANTARTICA</option>
                     <option value="ASIA">ASIA</option>
@@ -111,9 +111,9 @@ const AddBlog = ({ isOpen, onRequestClose , userName, onAddSuccess }) => {
                     <option value="NORTH AMERICA">NORTH AMERICA</option>
                     <option value="SOUTH AMERICA">SOUTH AMERICA</option>
                 </select>
-                <h2>LONG DESCRIPTION</h2>
+                <h2>Long Description</h2>
                 <textarea className='longdesc' value={longDescription} onChange={(e) => setLongDescription(e.target.value)} />
-                <h2>UPLOAD IMAGE</h2>
+                <h2>Upload Image</h2>
                 {previewImage && 
                 
                 <div className="preview-container">
@@ -123,7 +123,7 @@ const AddBlog = ({ isOpen, onRequestClose , userName, onAddSuccess }) => {
                 }
 
                 <input type="file" onChange={handleImageChange} accept="image/*" />
-                <button onClick={handleSubmit}>SUBMIT</button>
+                <button onClick={handleSubmit}>Submit</button>
             </Modal>
         </>
     );

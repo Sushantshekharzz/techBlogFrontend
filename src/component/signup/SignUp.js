@@ -4,6 +4,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom'; // Import Link from React Router
 import UsernameExistsModal from './UsernameExistsModal';
 import ToLoginModal from './ToLoginModal';
+import Navbar from '../navbar/Navbar';
+import Footer from '../footer/Footer';
 
 
 
@@ -40,15 +42,19 @@ function SignUp() {
   };
 
   return (
-    <div className="login-container">
-      <h2 className='login'>SIGN UP</h2>
+    <div className="">
+    <Navbar />
+    <div className="signup-container">
+         
+
+      <h2 className='login-title'>SIGN UP</h2>
       <form onSubmit={handleSubmit}>
         <div className="input-group">
           <label htmlFor="username" >USERNAME</label>
           <input
             type="text"
             id="username"
-            className='signup-input'
+            className='login-input'
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required // Add required attribute
@@ -60,7 +66,7 @@ function SignUp() {
           <input
             type="password"
             id="password"
-            className = "loginInput"
+            className = "login-input"
 
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -81,6 +87,8 @@ function SignUp() {
 
         />
       </form>
+      </div>
+<Footer/>
     </div>
   );
 }

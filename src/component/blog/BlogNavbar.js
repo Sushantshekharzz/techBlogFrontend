@@ -5,6 +5,7 @@ import AddBlog from './addblog/AddBlog'
     import { useState } from 'react'
 
 function BlogNavbar(props) {
+    console.log("testing")
     const [addBlog, setAddBlog] = useState(false)
 
     const CreateBlog = () =>{
@@ -15,7 +16,7 @@ function BlogNavbar(props) {
         props.toRefresh()
     }
     return (
-        <nav>
+        <nav className="blog-navbar">
         <div className="container">
             <div className="left-section">
                 <span className="user-name">Welcome, {props.userName} </span>

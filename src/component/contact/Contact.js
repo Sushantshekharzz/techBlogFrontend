@@ -2,6 +2,7 @@ import Navbar from "../navbar/Navbar"
 import { useState } from "react";
 import axios from "axios";
 import './contact.css'
+import Footer from "../footer/Footer";
 const Contact = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
@@ -26,7 +27,7 @@ const Contact = () => {
         setMessage('');
     };
     return (
-        <>
+        <div>
             <Navbar />
             <div className="contact-container">
                 <h2 className='contact'>CONTACT US</h2>
@@ -55,15 +56,17 @@ const Contact = () => {
                                             <div className="input-group">
 
                         <label htmlFor="password">Your Messaage</label>
-                        <textarea value={message} className="message-input"     onChange={(e) => setMessage(e.target.value)} />
+                        <textarea value={message} className="message-input-desc"     onChange={(e) => setMessage(e.target.value)} />
                     </div>
                     </div>
 
                     <button type="submit">Submit</button>
 
                 </form>
+                
             </div>
-        </>
+            <Footer/>
+        </div>
     )
 
 }

@@ -1,98 +1,62 @@
-/* General blog entry styling */
-.blog-entry {
+/* Container for blog cards */
+.blog-container {
   display: flex;
-  /* border-radius: 10px; */
-  overflow: hidden;
+  flex-wrap: wrap; /* Allow flex items to wrap to the next row */
+  gap: 20px; /* Increased space between rows for better readability */
+  justify-content: center; /* Center rows horizontally */
+  margin: 0 auto; /* Center the container on the page */
+}
+
+/* Blog card styling */
+.blog-card {
+  width: calc(33.33% - (20px * 2)); /* Set width for exactly three cards per line with gap included */
+  /* Explanation: Each card occupies 33.33% of the container's width minus the total horizontal gap space */
   background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-  margin-bottom: 70px;
-  margin-top:70px
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px; /* Spacing between cards */
 }
 
-.blog-entry:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Blog image container */
-.blog-image-container {
-  flex: 0 0 250px;
-  position: relative;
-}
-
-/* Blog image */
+/* Blog image styling */
 .blog-image {
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: 200px; /* Fixed height for images */
   object-fit: cover;
 }
 
-/* Content container */
-.content-container {
-  padding: 40px;
-  flex: 1;
+/* Blog details styling */
+.blog-details {
+  padding: 10px; /* Reduced padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* Field styling */
-.field {
-  margin-bottom: 15px;
-}
-
-/* Field label */
-.field label {
+/* Blog title styling */
+.blog-title {
+  font-size: 1.2em;
   font-weight: bold;
-  margin-bottom: 5px;
-  color: #666;
-}
-
-/* Field value */
-.value {
-  overflow-wrap: break-word; /* Wrap long words */
-  word-wrap: break-word; /* Fallback for older browsers */
-  word-break: break-all; /* Break words when needed */
-  white-space: pre-wrap; /* Wrap text preserving spaces and line breaks */
-  max-width: 100%; /* Set maximum width to ensure text wraps within the container */
-}
-
-/* Title styling */
-.value.title {
-  font-size: 24px;
-  font-weight: bold;
+  margin-bottom: 10px;
   color: #333;
+}
+
+/* Blog description styling */
+.blog-description {
+  font-size: 1em;
+  color: #666;
   margin-bottom: 10px;
 }
 
-
-
-/* Actions container */
-.actions {
-  margin-top: 20px;
+/* Blog link styling */
+.blog-link {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  align-self: flex-start; /* Align link to the start */
 }
 
-/* Edit and delete icons */
-.edit-icon,
-.delete-icon {
-  font-size: 18px;
-  cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 5px;
-  margin-left: 10px;
-}
-
-/* Edit icon styles */
-.edit-icon {
-  background-color: #007bff;
-}
-
-/* Delete icon styles */
-.delete-icon {
-  background-color: #dc3545;
-}
-
-/* Hover effects for icons */
-.edit-icon:hover,
-.delete-icon:hover {
-  opacity: 0.8;
-  transform: scale(1.1);
+/* Blog link hover styling */
+.blog-link:hover {
+  color: #0056b3;
 }

@@ -13,9 +13,9 @@ const UsernameExistsModal = ({ isOpen, onRequestClose, history }) => {
       contentLabel="Username Exists Modal"
       className="username-exist-modal" // Apply the CSS class to the modal
     >
-      <h2>USERNAME ALREADY EXISTS</h2>
-      <p>PLEASE CHOOSE ANOTHER USERNAME</p>
-      <button onClick={onRequestClose}>CLOSE</button>
+      <h2>Username Already Exist</h2>
+      <p>Please Choose Another Username</p>
+      <button onClick={onRequestClose}>Close</button>
       <i className="bi bi-x-circle"></i>
 
     </Modal>

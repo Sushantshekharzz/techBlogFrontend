@@ -4,6 +4,9 @@ import { useEffect } from 'react';
 import BlogEntry from './adminview/BlogEntry';
 import { useState } from 'react';
 import UpdateBlog from './updateblog/UpdateBlog'
+import Navbar from '../navbar/Navbar';
+import Footer from '../footer/Footer';
+import BlogView from '../blogview/BlogView';
 
 
 
@@ -19,6 +22,8 @@ function Blog() {
   const [toRefresh, setToRefresh]=useState(false)
   const [deleteRefresh, setDeleteRefresh] = useState(false);
   const [updateRefresh, setUpdateRefresh] = useState(false);
+  const [view,setView] = useState(false);
+  const [viewId, setViewId] = useState("")
 
 
 
@@ -72,26 +77,37 @@ function Blog() {
 
     
   }
-
+ 
 
   return (
     <div >
-      <BlogNavbar userName={userNameParam} 
+      
+      <div className="home-container">
+    <Navbar />
+    <BlogNavbar userName={userNameParam} 
       toRefresh = {torefresh}
       />
+            <div className="content blog-container">
+
       {blogs.map((blog, index) => (
         <BlogEntry key={index} blog={blog}
+        
           onEdit={() => handleEdit(blog.id)}
           onDelete={() => handleDelete(blog.id)}
+          
         />
       ))}
+            </div>
+
       {toEdit?<UpdateBlog
         id={id}
         isOpen={modalIsOpen}
         onRequestClose={afterUpdate}
       />:''}
-      
 
+      </div>
+
+<Footer/>
     </div>
   );
 }

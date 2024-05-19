@@ -4,6 +4,7 @@ import SignUp from './component/signup/SignUp';
 import Home from './component/home/Home';
 import Addblog from './component/blog/Blog';
 import Contact from './component/contact/Contact';
+import BlogView from './component/blogview/BlogView';
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
         <Route path="/SignUp" element={<SignUp />} /> 
         <Route path="/Addblog" element={<Addblog />} /> 
         <Route path="/Contact" element={<Contact />} /> 
+              <Route path="/viewBlog" element={< BlogView/>} /> 
+
 
 
       </Routes>
