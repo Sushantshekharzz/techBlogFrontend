@@ -15,6 +15,7 @@ function SignUp() {
   const [password, setPassword] = useState('');
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [toLogin,setToLogin] = useState(false);
+  const [name,setName] = useState('')
 
 
 
@@ -23,9 +24,11 @@ function SignUp() {
     event.preventDefault();
     const data = {
       "userName": username,
-      "password": password
+      "password": password,
+      "name":name
 
     }
+    console.log("data",data)
 
     await axios.post(`http://localhost:3001/signup/`, data).then((output) => {
       if (output.data.message === 'username already exist') {
@@ -47,10 +50,24 @@ function SignUp() {
     <div className="signup-container">
          
 
-      <h2 className='login-title'>SIGN UP</h2>
+      <h2 className='login-title'>Sign Up</h2>
       <form onSubmit={handleSubmit}>
+      <div className="input-group">
+          <label htmlFor="password">Name</label>
+          <input
+            type="text"
+            id="password"
+            className = "login-input"
+
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required // Add required attribute
+
+          />
+        </div>
         <div className="input-group">
-          <label htmlFor="username" >USERNAME</label>
+          
+          <label htmlFor="username" >Username</label>
           <input
             type="text"
             id="username"
@@ -62,7 +79,7 @@ function SignUp() {
           />
         </div>
         <div className="input-group">
-          <label htmlFor="password">PASSWORD</label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
@@ -74,8 +91,10 @@ function SignUp() {
 
           />
         </div>
-        <button type="submit">SIGN UP</button>
-        <p>Already have an account? <Link style={{ textDecoration: 'none', color: 'inherit' }} to="/Login">LOGIN</Link></p>
+
+        
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <Link style={{ textDecoration: 'none', color: 'inherit' }} to="/Login">Login</Link></p>
 
         <UsernameExistsModal
           isOpen={modalIsOpen}

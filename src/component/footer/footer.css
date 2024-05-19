@@ -3,6 +3,7 @@
     color: white;
     padding-top: 20px; /* Reduce padding for less space */
     font-family: Arial, sans-serif;
+    width: 100%;
 }
 
 .footer-container {

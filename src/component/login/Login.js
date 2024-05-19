@@ -22,7 +22,7 @@ function Login() {
       if (response.data.message === "invalid password") {
         setModalIsOpen(true);
       } else if (response.data.message === "Sucessfully Login") {
-        const userName = response.data.user.username;
+        const userName = response.data.user.name;
         window.location.href = `/Addblog?userName=${userName}`;
       }
     } catch (error) {
@@ -37,7 +37,7 @@ function Login() {
         <h2 className="login-title">LOGIN</h2>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
-            <label htmlFor="username">USERNAME</label>
+            <label htmlFor="username">Username</label>
             <input
               type="text"
               id="username"
@@ -48,7 +48,7 @@ function Login() {
             />
           </div>
           <div className="input-group">
-            <label htmlFor="password">PASSWORD</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               id="password"
@@ -59,12 +59,12 @@ function Login() {
             />
           </div>
           <button type="submit" className="login-button">
-            LOGIN
+            Login
           </button>
           <p>
             Not have an account?{" "}
             <Link to="/SignUp" className="signup-link">
-              SIGN UP
+              Sign Up
             </Link>
           </p>
           <InvalidCredential isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} />

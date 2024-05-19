@@ -60,4 +60,10 @@
     border: 1px solid #ccc;
 
   }
+  .message {
+    margin-top: 22px;
+  }
+  .message-submit{
+    margin-top: -20px;
+  }
   

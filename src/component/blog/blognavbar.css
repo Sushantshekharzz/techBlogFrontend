@@ -1,7 +1,8 @@
 .blog-navbar {
     background-color: #141414;
     color: #fff;
-    margin-top:70px
+    margin-top:70px;
+    width:100%
 }
 
 .right-section {

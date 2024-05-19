@@ -46,7 +46,7 @@ function Home() {
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="content blog-container">
+      <div className="content home-container">
         {blogs.map((blog, index) => ( 
           <BlogEntry key={index} blog={blog}
           onView = {()=>toview(blog.id)}

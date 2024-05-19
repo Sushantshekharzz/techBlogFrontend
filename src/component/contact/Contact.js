@@ -30,12 +30,13 @@ const Contact = () => {
         <div>
             <Navbar />
             <div className="contact-container">
-                <h2 className='contact'>CONTACT US</h2>
+                <h2 className='contact'>Contact us</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="input-group">
-                        <label htmlFor="username" >Your Name</label>
+                        <label htmlFor="username" >Name</label>
                         <input
                             type="text"
+                            
                             id="username"
                             className="contact-input"
                             value={name}
@@ -44,8 +45,9 @@ const Contact = () => {
                         />
                     </div>
                     <div className="input-group">
-                        <label htmlFor="password">Your Email</label>
+                        <label htmlFor="password">Username</label>
                         <input
+                       
                             type="text"
                             id="password"
                             className="contact-input"
@@ -55,12 +57,13 @@ const Contact = () => {
                         />
                                             <div className="input-group">
 
-                        <label htmlFor="password">Your Messaage</label>
-                        <textarea value={message} className="message-input-desc"     onChange={(e) => setMessage(e.target.value)} />
+                        <label htmlFor="password" className="message">Message</label>
+                        <textarea value={message} className="message-input-desc" 
+                          onChange={(e) => setMessage(e.target.value)} />
                     </div>
                     </div>
 
-                    <button type="submit">Submit</button>
+                    <button type="submit" className="message-submit">Submit</button>
 
                 </form>
                 
