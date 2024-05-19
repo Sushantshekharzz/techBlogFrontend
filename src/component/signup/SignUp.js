@@ -28,7 +28,6 @@ function SignUp() {
       "name":name
 
     }
-    console.log("data",data)
 
     await axios.post(`http://localhost:3001/signup/`, data).then((output) => {
       if (output.data.message === 'username already exist') {
@@ -93,7 +92,7 @@ function SignUp() {
         </div>
 
         
-        <button type="submit">Sign Up</button>
+        <button type="submit" className='signUp-button'>Sign Up</button>
         <p>Already have an account? <Link style={{ textDecoration: 'none', color: 'inherit' }} to="/Login">Login</Link></p>
 
         <UsernameExistsModal

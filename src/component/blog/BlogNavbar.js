@@ -5,7 +5,6 @@ import AddBlog from './addblog/AddBlog'
     import { useState } from 'react'
 
 function BlogNavbar(props) {
-    console.log("testing")
     const [addBlog, setAddBlog] = useState(false)
 
     const CreateBlog = () =>{

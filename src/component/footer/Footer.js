@@ -30,7 +30,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className="footer-section">
-                    <h4>CONTACT US</h4>
+                    <h4>CONTACT</h4>
                     <p>Email: info@travelblog.com</p>
                     <p>Phone: +123 456 7890</p>
                 </div>

@@ -58,7 +58,6 @@ const UpdateBlog = ({ isOpen, onRequestClose , userName, id}) => {
 
   }
     useEffect(()=>{
-        console.log("id",id)
     
 
          axios.get(`http://localhost:3001/blog/get/${id}`).then((value) => {
@@ -120,9 +119,9 @@ const UpdateBlog = ({ isOpen, onRequestClose , userName, id}) => {
                 <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
                 <h2>Short Description</h2>
                 <textarea value={shortDescription} className="shortdesc" onChange={(e) => setShortDescription(e.target.value)} />
-                <h2>Destination</h2>
+                <h2>Continent</h2>
                 <select className='dropDown' value={category} onChange={(e) => setCategory(e.target.value)}>
-                <option value="">Select Destination</option>
+                <option value="">Select Continent</option>
                     <option value="AFRICA">AFRICA</option>
                     <option value="ANTARTICA">ANTARTICA</option>
                     <option value="ASIA">ASIA</option>

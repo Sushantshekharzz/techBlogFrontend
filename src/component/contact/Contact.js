@@ -8,7 +8,6 @@ const Contact = () => {
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
     const handleSubmit = async(e) => {
-        console.log("'working ")
         const data = {
             email:email,
             name:name,
@@ -21,7 +20,6 @@ const Contact = () => {
 
     }
     const resetState = () => {
-        console.log("this one is working ")
         setEmail('');
         setName('');
         setMessage('');
@@ -30,7 +28,7 @@ const Contact = () => {
         <div>
             <Navbar />
             <div className="contact-container">
-                <h2 className='contact'>Contact us</h2>
+                <h2 className='contact'>CONTACT</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="input-group">
                         <label htmlFor="username" >Name</label>

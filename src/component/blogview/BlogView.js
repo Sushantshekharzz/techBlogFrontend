@@ -6,7 +6,6 @@ import Footer from "../footer/Footer";
 import './blogview.css'
 
 const BlogView = (props) =>{
-    console.log("working")
     const searchParams = new URLSearchParams(window.location.search);
 
     const id = searchParams.get('id');
@@ -19,11 +18,9 @@ const BlogView = (props) =>{
  
 
     useEffect(()=>{
-        console.log("id",id)
     
 
          axios.get(`http://localhost:3001/blog/get/${id}`).then((value) => {
-            console.log(";id",id)
             setTitle(value.data[0].title)
             setShortDescription(value.data[0].shortDescription)
             setCategory(value.data[0].category)
@@ -47,7 +44,7 @@ const BlogView = (props) =>{
           <div className="blog-details">
             {/* <h1>Title: {title}</h1> */}
             <p><strong>Title:</strong> {title}</p>
-            <p><strong>Destination:</strong> {category}</p>
+            <p><strong>Continent:</strong> {category}</p>
             <p><strong>Short Desc:</strong> {shortDescription}</p>
             <p><strong>Long Desc:</strong> {longDescription}</p>
           </div>

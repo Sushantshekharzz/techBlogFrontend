@@ -26,6 +26,7 @@ function Login() {
         window.location.href = `/Addblog?userName=${userName}`;
       }
     } catch (error) {
+      
       console.log("Error:", error);
     }
   };

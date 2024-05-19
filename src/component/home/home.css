@@ -1,21 +1,21 @@
 .home-container {
     width: 100%;
-}
-
-.video-container {
+  }
+  
+  .video-container {
     position: relative;
     width: 100%;
     height: 80vh;
     overflow: hidden;
-}
-
-.background-video {
+  }
+  
+  .background-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.above-video-text {
+  }
+  
+  .above-video-text {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -23,21 +23,21 @@
     text-align: center;
     z-index: 1;
     color: white;
-}
-
-.above-video-text h1 {
+  }
+  
+  .above-video-text h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.above-video-text p {
+  }
+  
+  .above-video-text p {
     font-size: 1.2em;
     line-height: 1.5;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.content {
+  }
+  
+  .content {
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 10px;
@@ -45,4 +45,41 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-}
+  }
+  
+  .filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-container > * {
+    margin-right: 10px;
+  }
+  
+  .filter-container button:last-child {
+    margin-right: 0;
+  }
+  
+  .filter-container select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .filter-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .filter-container button:hover {
+    background-color: #0056b3;
+  }
+  
