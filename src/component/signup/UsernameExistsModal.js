@@ -15,8 +15,7 @@ const UsernameExistsModal = ({ isOpen, onRequestClose, history }) => {
     >
       <h2>Username Already Exist</h2>
       <p>Please Choose Another Username</p>
-      <button onClick={onRequestClose}>Close</button>
-      <i className="bi bi-x-circle"></i>
+      <button onClick={onRequestClose} className='userNameExist'>Close</button>
 
     </Modal>
   );
