@@ -1,7 +1,7 @@
 import React from 'react';
 import './blogentry.css'; // Importing CSS file for styling
 
-const BlogEntry = ({ onView, blog, onEdit, onDelete, home ,key }) => {
+const BlogEntry = ({ onView, blog, onEdit, onDelete, home, key }) => {
   const { category, shortDescription, image, title } = blog;
   const imageUrl = `http://localhost:3001/${image.replace(/\\/g, '/')}`;
 
@@ -12,8 +12,8 @@ const BlogEntry = ({ onView, blog, onEdit, onDelete, home ,key }) => {
         <h2 className="blog-title">{category}</h2>
         <p className="blog-description">{title}</p>
         {home &&
-        // <a href="#" className="blog-link">Read More</a>
-        <button className = 'read-more'onClick = {onView}>Read More</button>}
+          // <a href="#" className="blog-link">Read More</a>
+          <button className='read-more' onClick={onView}>Read More</button>}
         {!home &&
           <div className="actions">
             <button onClick={onEdit} className="edit-icon">&#9998; Edit</button>

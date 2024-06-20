@@ -10,19 +10,16 @@ import BlogView from './component/blogview/BlogView';
 function App() {
   return (
     <div className="App">
-     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />  
-        <Route path="/Login" element={<Login />} />  
-        <Route path="/SignUp" element={<SignUp />} /> 
-        <Route path="/Addblog" element={<Addblog />} /> 
-        <Route path="/Contact" element={<Contact />} /> 
-              <Route path="/viewBlog" element={< BlogView/>} /> 
-
-
-
-      </Routes>
-    </Router>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/Addblog" element={<Addblog />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/viewBlog" element={< BlogView />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

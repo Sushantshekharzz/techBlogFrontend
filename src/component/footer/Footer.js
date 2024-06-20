@@ -17,7 +17,7 @@ function Footer() {
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="/Contact">Contact</a></li>
-                      
+
                     </ul>
                 </div>
                 <div className="footer-section">
@@ -35,7 +35,7 @@ function Footer() {
                     <p>Phone: +123 456 7890</p>
                 </div>
             </div>
-          
+
         </footer>
     );
 }

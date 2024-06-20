@@ -5,20 +5,20 @@ import axios from 'axios';
 import { useEffect } from 'react';
 
 const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    width: '80%', // Set the width of the modal
-    height: '80%', // Set the height of the modal
-    overflow: 'auto' // Enable overflow scrolling if content exceeds modal height
-  }
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        width: '80%', // Set the width of the modal
+        height: '80%', // Set the height of the modal
+        overflow: 'auto' // Enable overflow scrolling if content exceeds modal height
+    }
 };
 
-const AddBlog = ({ isOpen, onRequestClose , userName, onAddSuccess }) => {
+const AddBlog = ({ isOpen, onRequestClose, userName, onAddSuccess }) => {
     const [title, setTitle] = useState('');
     const [shortDescription, setShortDescription] = useState('');
     const [category, setCategory] = useState('');
@@ -41,13 +41,13 @@ const AddBlog = ({ isOpen, onRequestClose , userName, onAddSuccess }) => {
             formData.append('longDescription', longDescription);
             formData.append('image', image);
             formData.append('username', userName);
-      
+
             await axios.post('http://localhost:3001/blog/', formData, {
-              headers: {
-                'Content-Type': 'multipart/form-data'
-              }
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
             });
-      
+
             resetState();
             onRequestClose();
             onAddSuccess();
@@ -56,14 +56,14 @@ const AddBlog = ({ isOpen, onRequestClose , userName, onAddSuccess }) => {
             console.error("Error:", error);
         }
     };
-    
+
 
     const handleImageChange = (e) => {
         const selectedFile = e.target.files[0];
         setImage(selectedFile);
         const reader = new FileReader();
         reader.onload = () => {
-          setPreviewImage(reader.result);
+            setPreviewImage(reader.result);
         };
         reader.readAsDataURL(selectedFile);
     };
@@ -114,12 +114,12 @@ const AddBlog = ({ isOpen, onRequestClose , userName, onAddSuccess }) => {
                 <h2>Long Description</h2>
                 <textarea className='longdesc' value={longDescription} onChange={(e) => setLongDescription(e.target.value)} />
                 <h2>Upload Image</h2>
-                {previewImage && 
-                
-                <div className="preview-container">
+                {previewImage &&
 
-                <img src={previewImage} alt="Preview" className="preview-image" />
-                </div>
+                    <div className="preview-container">
+
+                        <img src={previewImage} alt="Preview" className="preview-image" />
+                    </div>
                 }
 
                 <input type="file" onChange={handleImageChange} accept="image/*" />

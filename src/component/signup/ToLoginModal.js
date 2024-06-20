@@ -5,8 +5,8 @@ import './tologinmodal.css'; // Import the CSS file for styling
 const ToLoginModal = ({ toLogin, onRequestClose, history }) => {
 
   const Login = () => {
-        window.location.href = '/Login';
-    };
+    window.location.href = '/Login';
+  };
 
   return (
     <Modal
@@ -18,7 +18,7 @@ const ToLoginModal = ({ toLogin, onRequestClose, history }) => {
       <h2>Successfully Sign Up</h2>
       {/* <p>Please choose another username or <span onClick={handleLoginRedirect} className="login-link">login</span>.</p> */}
       <button onClick={Login} className='toLoginPage'>Login</button>
-      
+
     </Modal>
   );
 };

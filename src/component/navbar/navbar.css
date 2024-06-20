@@ -4,7 +4,7 @@
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
-    position: fixed; /* Set the navbar to fixed position */
+    /* position: fixed; Set the navbar to fixed position */
     top: 0; /* Position it at the top of the page */
     width: 100%; /* Full width */
     z-index: 1000; /* Ensure it's on top of other content */

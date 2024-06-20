@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+// import { useHistory } from 'react-router-dom';
+
 import axios from "axios";
 import InvalidCredential from "./InvalidCredential";
 import Navbar from "../navbar/Navbar";
@@ -10,6 +12,7 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -23,10 +26,15 @@ function Login() {
         setModalIsOpen(true);
       } else if (response.data.message === "Sucessfully Login") {
         const userName = response.data.user.name;
-        window.location.href = `/Addblog?userName=${userName}`;
+        navigate(
+          '/Addblog', {
+          state: { userName }
+        }
+        );
+        // window.location.href = `/Addblog?userName=${userName}`;
       }
     } catch (error) {
-      
+
       console.log("Error:", error);
     }
   };
@@ -38,9 +46,9 @@ function Login() {
         <h2 className="login-title">LOGIN</h2>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">Email</label>
             <input
-              type="text"
+              type="email"
               id="username"
               className="login-input"
               value={username}

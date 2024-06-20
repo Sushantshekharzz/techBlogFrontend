@@ -4,7 +4,7 @@ import './usernameexistmodal.css'; // Import the CSS file for styling
 
 const UsernameExistsModal = ({ isOpen, onRequestClose, history }) => {
 
-  
+
 
   return (
     <Modal

@@ -7,11 +7,11 @@ const Contact = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
-    const handleSubmit = async(e) => {
+    const handleSubmit = async (e) => {
         const data = {
-            email:email,
-            name:name,
-            message:message
+            email: email,
+            name: name,
+            message: message
         }
         // e.preventDefault(); // Prevent the form from submitting normally
         await axios.post('http://localhost:3001/contact/', data)
@@ -34,7 +34,7 @@ const Contact = () => {
                         <label htmlFor="username" >Name</label>
                         <input
                             type="text"
-                            
+
                             id="username"
                             className="contact-input"
                             value={name}
@@ -43,9 +43,9 @@ const Contact = () => {
                         />
                     </div>
                     <div className="input-group">
-                        <label htmlFor="password">Username</label>
+                        <label htmlFor="password">Email</label>
                         <input
-                       
+
                             type="text"
                             id="password"
                             className="contact-input"
@@ -53,20 +53,20 @@ const Contact = () => {
                             onChange={(e) => setEmail(e.target.value)}
                             required // Add required attribute
                         />
-                                            <div className="input-group">
+                        <div className="input-group">
 
-                        <label htmlFor="password" className="message">Message</label>
-                        <textarea value={message} className="message-input-desc" 
-                          onChange={(e) => setMessage(e.target.value)} />
-                    </div>
+                            <label htmlFor="password" className="message">Message</label>
+                            <textarea value={message} className="message-input-desc"
+                                onChange={(e) => setMessage(e.target.value)} />
+                        </div>
                     </div>
 
                     <button type="submit" className="message-submit">Submit</button>
 
                 </form>
-                
+
             </div>
-            <Footer/>
+            <Footer />
         </div>
     )
 
