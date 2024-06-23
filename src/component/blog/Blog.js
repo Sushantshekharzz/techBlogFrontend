@@ -10,6 +10,8 @@ import './blog.css'
 // import BlogView from '../blogview/BlogView';
 import SearchBar from '../searchbar/Searchbar';
 import { useLocation } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
+
 
 
 
@@ -38,6 +40,8 @@ function Blog() {
   const [searchAv, setSearchAv] = useState(false);
   const [filterCriteria, setFilterCriteria] = useState('');
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     setFilteredBlog(filterBlogs(blogs, searchTerm, filterCriteria));
 
@@ -57,10 +61,22 @@ function Blog() {
 
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/blog/${userNameParam}`).then((value) => {
+    try{
+    const token   = localStorage.getItem('token')
+    const headers = {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'multipart/form-data'
+    };
+
+    axios.get(`http://localhost:3001/blog/${userNameParam}`,{headers}).then((value) => {
       setBlogs(value.data);
 
-    });
+    })}
+    catch(e){
+      navigate("/Login")
+      console.error("Error:", e);
+
+    }
 
   }, [])
   const filterClose = () => {
@@ -81,11 +97,19 @@ function Blog() {
     // setToRefresh(true)
 
     try {
-      await axios.delete(`http://localhost:3001/blog/${index}`)
+      const token   = localStorage.getItem('token')
+      const headers = {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'multipart/form-data'
+      };
+      await axios.delete(`http://localhost:3001/blog/${index}`,{headers})
       setDeleteRefresh(prevState => !prevState)
 
     }
     catch (error) {
+      navigate("/Login")
+            console.error("Error:", error);
+
 
       console.log("error", error)
     }
@@ -94,10 +118,21 @@ function Blog() {
   };
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/blog/${userNameParam}`).then((value) => {
+    try{
+    const token   = localStorage.getItem('token')
+
+    const headers = {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'multipart/form-data'
+    };
+  
+    axios.get(`http://localhost:3001/blog/${userNameParam}`,{headers}).then((value) => {
       setBlogs(value.data);
 
     });
+  }catch(e){
+    navigate("/Login")
+  }
   }, [toRefresh, deleteRefresh, updateRefresh])
 
   const torefresh = () => {

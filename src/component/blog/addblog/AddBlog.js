@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import './addblog.css';
 import axios from 'axios';
+import { Link, useNavigate } from "react-router-dom";
+
 import { useEffect } from 'react';
 
 const customStyles = {
@@ -19,6 +21,8 @@ const customStyles = {
 };
 
 const AddBlog = ({ isOpen, onRequestClose, userName, onAddSuccess }) => {
+    const navigate = useNavigate();
+
     const [title, setTitle] = useState('');
     const [shortDescription, setShortDescription] = useState('');
     const [category, setCategory] = useState('');
@@ -30,6 +34,8 @@ const AddBlog = ({ isOpen, onRequestClose, userName, onAddSuccess }) => {
     const handleSubmit = async () => {
         try {
 
+    const token   = localStorage.getItem('token')
+           
             if (!title || !shortDescription || !category || !longDescription || !image) {
                 alert('Please fill in all mandatory fields.');
                 return; // Stop further execution
@@ -41,11 +47,13 @@ const AddBlog = ({ isOpen, onRequestClose, userName, onAddSuccess }) => {
             formData.append('longDescription', longDescription);
             formData.append('image', image);
             formData.append('username', userName);
+            const headers = {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'multipart/form-data'
+              };
 
-            await axios.post('http://localhost:3001/blog/', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
+            await axios.post('http://localhost:3001/blog/' ,formData, {
+                headers
             });
 
             resetState();
@@ -53,7 +61,7 @@ const AddBlog = ({ isOpen, onRequestClose, userName, onAddSuccess }) => {
             onAddSuccess();
 
         } catch (error) {
-            console.error("Error:", error);
+            navigate("/Login")
         }
     };
 

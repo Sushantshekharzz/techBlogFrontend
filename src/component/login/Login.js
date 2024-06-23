@@ -26,6 +26,9 @@ function Login() {
         setModalIsOpen(true);
       } else if (response.data.message === "Sucessfully Login") {
         const userName = response.data.user.username;
+        const token = response.data.token;
+        localStorage.setItem('token', token);
+
         console.log(response.data.user)
         navigate(
           '/Addblog', {

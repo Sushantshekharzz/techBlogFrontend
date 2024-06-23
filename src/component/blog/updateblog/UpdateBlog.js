@@ -3,6 +3,8 @@ import Modal from 'react-modal';
 import './updateblog.css';
 import axios from 'axios';
 import { useEffect } from 'react';
+import { Link, useNavigate } from "react-router-dom";
+
 
 const customStyles = {
   content: {
@@ -25,8 +27,12 @@ const UpdateBlog = ({ isOpen, onRequestClose, userName, id }) => {
   const [longDescription, setLongDescription] = useState('');
   const [image, setImage] = useState(null); // State to store selected image file
   const [incomingImage, setIncomingImage] = useState('')
+  const navigate = useNavigate();
 
-  const handleSubmit = () => {
+
+
+  const handleSubmit = async() => {
+    try {
     if (!title || !shortDescription || !category || !longDescription || !image) {
       alert('Please fill in all mandatory fields.');
       return; // Stop further execution
@@ -39,19 +45,21 @@ const UpdateBlog = ({ isOpen, onRequestClose, userName, id }) => {
       "image": image,
       "username": userName
     };
-    try {
-      axios.put(`http://localhost:3001/blog/${id}`, data, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      }).then(() => {
-        resetState();
-        onRequestClose();
+    const token   = localStorage.getItem('token')
 
-      });
+    const headers = {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'multipart/form-data'
+    };
+    
+     await axios.put(`http://localhost:3001/blog/${id}`, data,{headers} )
+      resetState();
+      onRequestClose();
+
     }
     catch (error) {
-      console.log("error", error)
+      navigate("/Login")
+
     }
 
 
