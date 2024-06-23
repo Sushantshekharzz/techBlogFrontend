@@ -46,7 +46,7 @@ const Contact = () => {
                         <label htmlFor="password">Email</label>
                         <input
 
-                            type="text"
+                            type="email"
                             id="password"
                             className="contact-input"
                             value={email}

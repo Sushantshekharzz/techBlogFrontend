@@ -68,7 +68,7 @@ function SignUp() {
 
             <label htmlFor="username" >Email</label>
             <input
-              type="text"
+              type="email"
               id="username"
               className='login-input'
               value={username}

@@ -25,7 +25,8 @@ function Login() {
       if (response.data.message === "invalid password") {
         setModalIsOpen(true);
       } else if (response.data.message === "Sucessfully Login") {
-        const userName = response.data.user.name;
+        const userName = response.data.user.username;
+        console.log(response.data.user)
         navigate(
           '/Addblog', {
           state: { userName }
