@@ -31,7 +31,7 @@ function Login() {
 
         console.log(response.data.user)
         navigate(
-          '/Addblog', {
+          '/Blog', {
           state: { userName }
         }
         );

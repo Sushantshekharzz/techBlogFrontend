@@ -2,7 +2,7 @@
 import './blognavbar.css'
 import { Link, useNavigate } from "react-router-dom";
 
-import AddBlog from './addblog/AddBlog'
+import AddBlog from '../addblog/AddBlog'
 import { useState } from 'react'
 
 function BlogNavbar(props) {

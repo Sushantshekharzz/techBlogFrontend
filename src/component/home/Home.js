@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Navbar from "../navbar/Navbar";
-import BlogEntry from "../blog/adminview/BlogEntry";
+import BlogEntry from "../blog/blogcard/BlogEntry";
 import './home.css'; // Import the CSS file for styling
 import video from '../../Assets/video.mp4';
 import Footer from '../footer/Footer';

@@ -1,14 +1,14 @@
-import BlogNavbar from './BlogNavbar'
+import BlogNavbar from '../blognavbar/BlogNavbar';
 import axios from 'axios';
 import { useEffect } from 'react';
-import BlogEntry from './adminview/BlogEntry';
+import BlogEntry from '../blogcard/BlogEntry';
 import { useState } from 'react';
-import UpdateBlog from './updateblog/UpdateBlog'
-import Navbar from '../navbar/Navbar';
-import Footer from '../footer/Footer';
+import UpdateBlog from '../updateblog/UpdateBlog'
+import Navbar from '../../navbar/Navbar';
+import Footer from '../../footer/Footer';
 import './blog.css'
 // import BlogView from '../blogview/BlogView';
-import SearchBar from '../searchbar/Searchbar';
+import SearchBar from '../../searchbar/Searchbar';
 import { useLocation } from 'react-router-dom';
 import { Link, useNavigate } from "react-router-dom";
 
