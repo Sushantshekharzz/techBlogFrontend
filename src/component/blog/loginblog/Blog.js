@@ -23,7 +23,8 @@ function Blog() {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredBlog, setFilteredBlog] = useState([]);
   const location = useLocation();
-  const userNameParam = location.state.userName || {};
+  const userId = location.state.id
+  // const userNameParam = location.state.userName || {};
 
 
   // const userNameParam = searchParams.get('userName');
@@ -68,7 +69,7 @@ function Blog() {
       'Content-Type': 'multipart/form-data'
     };
 
-    axios.get(`http://localhost:3001/blog/${userNameParam}`,{headers}).then((value) => {
+    axios.get(`http://localhost:3001/blog/${userId}`,{headers}).then((value) => {
       setBlogs(value.data);
 
     })}
@@ -126,7 +127,7 @@ function Blog() {
       'Content-Type': 'multipart/form-data'
     };
   
-    axios.get(`http://localhost:3001/blog/${userNameParam}`,{headers}).then((value) => {
+    axios.get(`http://localhost:3001/blog/${userId}`,{headers}).then((value) => {
       setBlogs(value.data);
 
     });
@@ -160,7 +161,7 @@ function Blog() {
 
     <div className="blog-container">
       {/* <Navbar /> */}
-      <BlogNavbar userName={userNameParam}
+      <BlogNavbar userId={userId}
         toRefresh={torefresh}
       />
       <div className="filter-container">

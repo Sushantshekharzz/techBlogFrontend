@@ -25,14 +25,15 @@ function Login() {
       if (response.data.message === "invalid password") {
         setModalIsOpen(true);
       } else if (response.data.message === "Sucessfully Login") {
-        const userName = response.data.user.username;
+        const id  = response.data.user.id
+
+        // const userName = response.data.user.username;
         const token = response.data.token;
         localStorage.setItem('token', token);
 
-        console.log(response.data.user)
         navigate(
           '/Blog', {
-          state: { userName }
+          state: { id }
         }
         );
         // window.location.href = `/Addblog?userName=${userName}`;

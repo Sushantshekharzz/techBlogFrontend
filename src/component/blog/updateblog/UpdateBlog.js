@@ -45,7 +45,7 @@ const UpdateBlog = ({ isOpen, onRequestClose, userName, id }) => {
       "image": image,
       "username": userName
     };
-    const token   = localStorage.getItem('token')
+    const   token   = localStorage.getItem('token')
 
     const headers = {
       'Authorization': `Bearer ${token}`,
@@ -67,7 +67,7 @@ const UpdateBlog = ({ isOpen, onRequestClose, userName, id }) => {
   useEffect(() => {
 
 
-    axios.get(`http://localhost:3001/blog/get/${id}`).then((value) => {
+    axios.get(`http://localhost:3001/blog/getUpdateInfo/${id}`).then((value) => {
       setTitle(value.data[0].title)
       setShortDescription(value.data[0].shortDescription)
       setCategory(value.data[0].category)

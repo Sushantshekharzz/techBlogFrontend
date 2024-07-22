@@ -20,7 +20,7 @@ const customStyles = {
     }
 };
 
-const AddBlog = ({ isOpen, onRequestClose, userName, onAddSuccess }) => {
+const AddBlog = ({ isOpen, onRequestClose, userId, onAddSuccess }) => {
     const navigate = useNavigate();
 
     const [title, setTitle] = useState('');
@@ -46,7 +46,8 @@ const AddBlog = ({ isOpen, onRequestClose, userName, onAddSuccess }) => {
             formData.append('category', category);
             formData.append('longDescription', longDescription);
             formData.append('image', image);
-            formData.append('username', userName);
+            formData.append('userId', userId);
+            console.log("formData",formData)
             const headers = {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'multipart/form-data'
